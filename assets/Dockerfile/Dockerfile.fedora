@@ -8,10 +8,10 @@ WORKDIR /app
 RUN dnf update -y && dnf install bash curl sudo -y
 
 # Copy the script into the container
-COPY wireguard-manager.sh /app/wireguard-manager.sh
+COPY main.sh /app/main.sh
 
 # Grant execution permissions to the script
-RUN chmod +x /app/wireguard-manager.sh
+RUN chmod +x /app/main.sh
 
 # Execute the script during build
-RUN /bin/bash /app/wireguard-manager.sh --install
+RUN /bin/bash /app/main.sh --install
