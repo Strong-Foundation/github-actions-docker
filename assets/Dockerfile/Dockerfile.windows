@@ -1,8 +1,11 @@
-# Use the Microsoft Windows base image
-FROM mcr.microsoft.com/windows/servercore:ltsc2019
+# Use the latest Windows Server Core image as the base
+FROM mcr.microsoft.com/windows/servercore:latest
 
-# Copy the PowerShell script to the container
-COPY main.ps1 C:/main.ps1
+# Set the working directory inside the container
+WORKDIR C:/app
 
-# Run the PowerShell script when the container starts
-CMD powershell -ExecutionPolicy Bypass -File C:/main.ps1
+# Copy hello.ps1 script into the container
+COPY main.ps1 C:/app/main.ps1
+
+# Run the hello.ps1 PowerShell script
+CMD powershell -ExecutionPolicy Bypass -File C:/app/main.ps1
