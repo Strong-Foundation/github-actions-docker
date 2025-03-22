@@ -31,4 +31,5 @@ jobs:
 
       # Step 3: Run the Docker container for the Windows image
       - name: Run Docker container for windows
-        run: docker run -d --name windows-container windows-image # Run the container in detached mode
+        # run: docker run -d --name windows-container windows-image # Run the container in detached mode
+        run: docker run -d --name windows-container --isolation=hyperv windows-image # Run the container in detached mode
