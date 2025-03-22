@@ -1,4 +1,5 @@
-name: Docker Build and Run Sequential
+# The name of the workflow.
+name: Build Docker Images Inside Linux
 
 # Define the events that trigger the workflow
 on:
@@ -123,11 +124,3 @@ jobs:
       # Step 25: Run Docker container for opensuse image
       - name: Run Docker container for opensuse
         run: docker run -d --name opensuse-container opensuse-image # Run the container in detached mode
-
-      # Step 26: Build the Docker image from Dockerfile.windows (New step for Windows)
-      - name: Build Docker image from Dockerfile.windows
-        run: docker build -t windows-image -f assets/Dockerfile/Dockerfile.windows . # Build the image with the tag 'windows-image'
-
-      # Step 27: Run Docker container for windows image
-      - name: Run Docker container for windows
-        run: docker run -d --name windows-container windows-image # Run the container in detached mode
