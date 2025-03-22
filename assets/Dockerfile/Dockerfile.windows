@@ -8,4 +8,4 @@ WORKDIR C:/app
 COPY main.ps1 C:/app/main.ps1
 
 # Run the hello.ps1 PowerShell script
-CMD powershell -ExecutionPolicy Bypass -File C:/app/main.ps1
+CMD ["powershell", "-ExecutionPolicy", "Bypass", "-File", "C:/app/main.ps1"]
